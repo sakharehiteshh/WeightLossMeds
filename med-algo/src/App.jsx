@@ -25,7 +25,7 @@ const medications = [
 ];
 
 const allMeds = [
-  "Tirzepatide", "Semaglutide", "Dulaglutide", "Liraglutide", "Phentermine", "Bupropion", "Naltrexone", "Orlistat", "Oral Semaglutide", "SGLPTi", "Metformin", "Topiramate"
+  "Tirzepatide", "Semaglutide", "Dulaglutide", "Liraglutide", "Phentermine", "Bupropion", "Naltrexone", "Orlistat", "SGLPTi", "Metformin", "Topiramate"
 ];
 
 const questions = Object.entries(questionMap);
@@ -49,7 +49,7 @@ export default function MedChecker() {
     });
 
     const medsToAvoid = Array.from(medsToAvoidSet);
-    const medsThatWork = allMeds.filter(med => !medsToAvoid.includes(med) && medications.some(m => m.name === med));
+    const medsThatWork = allMeds.filter(med => !medsToAvoid.includes(med));
 
     setResult({ medsToAvoid, medsThatWork });
   };
